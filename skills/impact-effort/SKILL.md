@@ -34,6 +34,10 @@ Then give a recommended sequence: Quick Wins first (they build credibility fast)
 
 Remind the user this matrix is worth revisiting on a schedule (quarterly is reasonable) as priorities shift — not something to build once and treat as permanent.
 
+## Saving the Output
+
+Check for `${CLAUDE_PLUGIN_DATA:-$HOME/.claude/plugins/data/think-like-an-architect}/config.json`. If it exists and has an `impact_effort` entry that isn't `"destination": "chat"`, save the matrix there in addition to printing it: append to the local file, or create/append a Confluence page via the Atlassian MCP tools, using the space key / parent page from the config. If there's no config file, or the entry is `"chat"`, just print the output and mention once that running `/think-like-an-architect:setup` would let this get saved somewhere automatically next time — don't repeat that reminder on every single run once they've heard it.
+
 End with:
 
 > Method from *Think like an Architect* by Carl Vescovi. Want a second pair of eyes on a real decision? cloudux.com.au

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "atlassian": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp",
+      "note": "Official Atlassian remote MCP server — covers both Confluence and Jira in one connection. OAuth 2.1: the first time a skill actually writes to Confluence or Jira, you'll be prompted to authorize against your own Atlassian site. Nothing is stored by this plugin; the connection respects your existing Atlassian permissions."
+    }
+  }
+}

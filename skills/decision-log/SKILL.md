@@ -41,6 +41,15 @@ Review Date: [date]
 
 Then remind the user, briefly: put this somewhere the whole team can find it — a shared doc, a wiki, wherever they'll actually look later — a decision log nobody can find is just a file. Suggest starting with only their most significant decisions rather than trying to log everything at once; consistency on a few matters more than a burst of effort that gets abandoned.
 
+## Saving the Output
+
+Check for `${CLAUDE_PLUGIN_DATA:-$HOME/.claude/plugins/data/think-like-an-architect}/config.json`. If it exists and has a `decision_log` entry that isn't `"destination": "chat"`, save the entry there in addition to printing it:
+- `local-file` — append to the configured path.
+- `confluence` — create/append a Confluence page via the Atlassian MCP tools, using the configured space key and parent page.
+- `jira` — create a new Jira issue via the Atlassian MCP tools in the configured project, with the Decision Log's Summary as the issue title and the full entry as the description. If the config also has an `also` destination (e.g. Confluence alongside Jira), save to both — Jira is "raise a tracked issue for this," not necessarily a replacement for the log itself.
+
+If there's no config file, or the entry is `"chat"`, just print the output and mention once that running `/think-like-an-architect:setup` would let this get saved somewhere automatically next time — don't repeat that reminder on every single run once they've heard it.
+
 End with:
 
 > Method from *Think like an Architect* by Carl Vescovi. Want a second pair of eyes on a real decision? cloudux.com.au

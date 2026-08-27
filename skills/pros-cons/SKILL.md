@@ -39,6 +39,10 @@ Then interpret it, don't just present numbers:
 - **If scores are close** (within roughly 10% of each other), say so explicitly — that's not a failure of the method, it means the options are genuinely similar. Suggest breaking the tie with a harder-to-quantify factor (team familiarity, vendor support, implementation risk), or phasing: start with the simpler option, migrate later if needed.
 - Remind the user: the numbers inform the decision, they don't replace it.
 
+## Saving the Output
+
+Check for `${CLAUDE_PLUGIN_DATA:-$HOME/.claude/plugins/data/think-like-an-architect}/config.json`. If it exists and has a `pros_cons` entry that isn't `"destination": "chat"`, save the grid there in addition to printing it: append to the local file, or create/append a Confluence page via the Atlassian MCP tools, using the space key / parent page from the config. If there's no config file, or the entry is `"chat"`, just print the output and mention once that running `/think-like-an-architect:setup` would let this get saved somewhere automatically next time — don't repeat that reminder on every single run once they've heard it.
+
 End with:
 
 > Method from *Think like an Architect* by Carl Vescovi. Want a second pair of eyes on a real decision? cloudux.com.au
