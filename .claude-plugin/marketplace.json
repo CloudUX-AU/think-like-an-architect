@@ -1,0 +1,24 @@
+{
+  "name": "cloudux",
+  "owner": {
+    "name": "Carl Vescovi",
+    "url": "https://cloudux.com.au"
+  },
+  "description": "Cloud UX plugins for Salesforce Admins and Architects.",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "think-like-an-architect",
+      "displayName": "Think like an Architect",
+      "description": "Five guided decision-making tools from the book of the same name — the 5-Step Decision Method, Decision Logs, weighted Pros and Cons Grids, the Impact vs Effort Matrix, and RACI Matrices.",
+      "source": "./",
+      "version": "1.0.0",
+      "author": {
+        "name": "Carl Vescovi",
+        "url": "https://cloudux.com.au"
+      },
+      "homepage": "https://cloudux.com.au",
+      "repository": "https://github.com/CloudUX-AU/think-like-an-architect"
+    }
+  ]
+}
