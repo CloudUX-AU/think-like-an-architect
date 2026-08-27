@@ -41,14 +41,22 @@ Review Date: [date]
 
 Then remind the user, briefly: put this somewhere the whole team can find it — a shared doc, a wiki, wherever they'll actually look later — a decision log nobody can find is just a file. Suggest starting with only their most significant decisions rather than trying to log everything at once; consistency on a few matters more than a burst of effort that gets abandoned.
 
-## Saving the Output
+## Saving the Output: Register + Linked Page
 
-Check for `${CLAUDE_PLUGIN_DATA:-$HOME/.claude/plugins/data/think-like-an-architect}/config.json`. If it exists and has a `decision_log` entry that isn't `"destination": "chat"`, save the entry there in addition to printing it:
-- `local-file` — append to the configured path.
-- `confluence` — create/append a Confluence page via the Atlassian MCP tools, using the configured space key and parent page.
-- `jira` — create a new Jira issue via the Atlassian MCP tools in the configured project, with the Decision Log's Summary as the issue title and the full entry as the description. If the config also has an `also` destination (e.g. Confluence alongside Jira), save to both — Jira is "raise a tracked issue for this," not necessarily a replacement for the log itself.
+This is the one skill in the plugin that maintains **two things, not one**: a central register (a table listing every decision) and a separate page per decision that the register links to. Check `${CLAUDE_PLUGIN_DATA:-$HOME/.claude/plugins/data/think-like-an-architect}/config.json` for a `decision_log` entry. If it's missing or `"destination": "chat"`, just print the entry and mention once (not every run) that `/think-like-an-architect:setup` would let this get filed automatically. Otherwise:
 
-If there's no config file, or the entry is `"chat"`, just print the output and mention once that running `/think-like-an-architect:setup` would let this get saved somewhere automatically next time — don't repeat that reminder on every single run once they've heard it.
+**`local-file`** — `register_path` and `pages_dir` are both in the config.
+1. Create `pages_dir` if it doesn't exist. Write the full entry to `{pages_dir}/{Decision ID}.md`.
+2. Read `register_path` (create it with a header row if it doesn't exist yet: `| ID | Date | Summary | Review Date | Page |`).
+3. Append one new row, with the Page column as a relative markdown link to the file just created — e.g. `[D-2026-01](decisions/D-2026-01.md)`.
+
+**`confluence`** — `space_key` and `register_page` are in the config.
+1. Create a new **child page** under `register_page` (via the Atlassian MCP tools), titled `{Decision ID}: {Summary}`, containing the full entry.
+2. Update `register_page` itself: add a row to its table (create the table if this is the first entry) with the same columns as above, linking to the new child page.
+
+**`jira`** — `project_key` is in the config. Create a new Jira issue in that project via the Atlassian MCP tools: the Decision Log's Summary as the issue title, the full entry as the description. **Don't build a separate table for this one** — the project's own issue list already is the register, and the issue itself already is the linked page. If the config also has an `also` destination (e.g. Confluence), additionally do that destination's steps above — Jira and a register elsewhere aren't mutually exclusive.
+
+**`google-doc`** — `register_doc_id` and (optionally) `pages_folder_id` are in the config. Create a new Google Doc for the entry (in the folder if one's configured), then update the register doc's table with a new row linking to it. This is the most manual of the four to keep reliable — if the Google Docs MCP tools aren't available or the write fails, say so plainly and fall back to printing the entry rather than silently doing nothing.
 
 End with:
 

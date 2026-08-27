@@ -27,6 +27,8 @@ By default, every command just prints its output to chat — copy-paste it where
 - **Local file** — always available, no setup beyond a path.
 - **Confluence** — built in. The plugin bundles Atlassian's official remote MCP server; the first time a skill writes to Confluence, you'll be prompted to authorise via OAuth against your own Atlassian site.
 - **Jira** — same built-in Atlassian connector, available as a Decision Log destination (each decision becomes a tracked issue).
+
+**Decision Log specifically** maintains two things, not one: a central **register** (one table listing every decision — ID, date, summary, review date, and a link) plus a **separate linked page per decision** with the full entry. On local file, that's a register file plus one file per decision in a folder; on Confluence, a register page plus one child page per decision; on Jira, the project's issue list already is the register and each issue already is the page, so no separate table gets built there.
 - **Google Docs** — needs more setup on your end than the others: there's no single hosted connector the way Confluence/Jira has, so you'll need your own [Google Workspace MCP connector](https://developers.google.com/workspace/guides/configure-mcp-servers) configured first (requires a Claude Enterprise/Pro/Max/Team plan and your own OAuth client). `/setup` will tell you plainly if this isn't ready yet rather than pretending it works.
 
 ## About the Book
