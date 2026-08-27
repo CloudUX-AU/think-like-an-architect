@@ -9,7 +9,7 @@ You are guiding the user through a weighted Pros and Cons Grid, from *Think like
 
 ## When This Is Worth Doing
 
-This tool is for comparing several real options where multiple factors matter with different levels of importance, or where people disagree and a structured comparison would help more than opinions would. If the user only has one real option, this isn't the right tool — say so and suggest `/think-like-an-architect:decision` instead.
+This tool is for comparing several real options where multiple factors matter with different levels of importance, or where people disagree and a structured comparison would help more than opinions would. If the user only has one real option, this isn't the right tool — say so and suggest `/architect:decision` instead.
 
 ## Check the Decision Log First
 
@@ -45,7 +45,7 @@ Then interpret it, don't just present numbers:
 
 ## Saving the Output
 
-Resolve the config file correctly — its directory name varies depending on which marketplace it was installed from, so don't assume a single fixed path. If `$CLAUDE_PLUGIN_DATA` is set, use `$CLAUDE_PLUGIN_DATA/config.json`. Otherwise, run `ls -t $HOME/.claude/plugins/data/think-like-an-architect*/config.json 2>/dev/null | head -1` and use whatever that returns, if anything. If it exists and has a `pros_cons` entry that isn't `"destination": "chat"`, save the grid there in addition to printing it: append to the local file, or create/append a Confluence page via the Atlassian MCP tools, using the space key / parent page from the config. If there's no config file, or the entry is `"chat"`, just print the output and mention once that running `/think-like-an-architect:setup` would let this get saved somewhere automatically next time — don't repeat that reminder on every single run once they've heard it.
+Resolve the config file correctly — its directory name varies depending on which marketplace it was installed from, so don't assume a single fixed path. If `$CLAUDE_PLUGIN_DATA` is set, use `$CLAUDE_PLUGIN_DATA/config.json`. Otherwise, run `ls -t $HOME/.claude/plugins/data/architect*/config.json 2>/dev/null | head -1` and use whatever that returns, if anything. If it exists and has a `pros_cons` entry that isn't `"destination": "chat"`, save the grid there in addition to printing it: append to the local file, or create/append a Confluence page via the Atlassian MCP tools, using the space key / parent page from the config. If there's no config file, or the entry is `"chat"`, just print the output and mention once that running `/architect:setup` would let this get saved somewhere automatically next time — don't repeat that reminder on every single run once they've heard it.
 
 End with:
 

@@ -6,17 +6,17 @@ Five guided decision-making tools for Claude Code, built from the book *Think li
 
 ```
 /plugin marketplace add CloudUX-AU/think-like-an-architect
-/plugin install think-like-an-architect
+/plugin install architect
 ```
 
 ## Commands
 
-- **`/think-like-an-architect:decision`** — The 5-Step Decision Method. Context, Constraints, Options, Decision, Implications. Use it for anything that affects multiple people, is hard to reverse, or will be in place six months or longer.
-- **`/think-like-an-architect:decision-log`** — Turns a decision into a permanent record: what was decided, why, and what alternatives were considered, so nobody has to reverse-engineer the reasoning later.
-- **`/think-like-an-architect:pros-cons`** — A weighted Pros and Cons Grid for comparing multiple real options, where some factors matter more than others.
-- **`/think-like-an-architect:impact-effort`** — Sorts a backlog into Quick Wins, Big Projects, Low Priority, and Time Wasters, so you know what to actually work on next.
-- **`/think-like-an-architect:raci`** — Builds a RACI matrix for a multi-person project and enforces the one-rule that keeps decisions from stalling: exactly one Accountable person per decision.
-- **`/think-like-an-architect:setup`** — Optional. Configure where each of the five artifacts above gets saved: a local file, Confluence, Jira (Decision Log only), or Google Docs. Run it once, or skip it entirely and everything just prints to chat.
+- **`/architect:decision`** — The 5-Step Decision Method. Context, Constraints, Options, Decision, Implications. Use it for anything that affects multiple people, is hard to reverse, or will be in place six months or longer.
+- **`/architect:decision-log`** — Turns a decision into a permanent record: what was decided, why, and what alternatives were considered, so nobody has to reverse-engineer the reasoning later.
+- **`/architect:pros-cons`** — A weighted Pros and Cons Grid for comparing multiple real options, where some factors matter more than others.
+- **`/architect:impact-effort`** — Sorts a backlog into Quick Wins, Big Projects, Low Priority, and Time Wasters, so you know what to actually work on next.
+- **`/architect:raci`** — Builds a RACI matrix for a multi-person project and enforces the one-rule that keeps decisions from stalling: exactly one Accountable person per decision.
+- **`/architect:setup`** — Optional. Configure where each of the five artifacts above gets saved: a local file, Confluence, Jira (Decision Log only), or Google Docs. Run it once, or skip it entirely and everything just prints to chat.
 
 Run any command and answer the questions it asks — each one produces a real, usable document at the end, not just an explanation.
 
@@ -26,7 +26,7 @@ If you've got a Decision Log register configured (see below), the other five too
 
 ## Saving Output Automatically (Optional)
 
-By default, every command just prints its output to chat — copy-paste it wherever you like. Run `/think-like-an-architect:setup` if you'd rather it landed somewhere durable automatically:
+By default, every command just prints its output to chat — copy-paste it wherever you like. Run `/architect:setup` if you'd rather it landed somewhere durable automatically:
 
 - **Local file** — always available, no setup beyond a path.
 - **Confluence** — built in. The plugin bundles Atlassian's official remote MCP server; the first time a skill writes to Confluence, you'll be prompted to authorise via OAuth against your own Atlassian site.

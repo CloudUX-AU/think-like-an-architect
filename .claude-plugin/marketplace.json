@@ -8,11 +8,11 @@
   "version": "1.0.0",
   "plugins": [
     {
-      "name": "think-like-an-architect",
+      "name": "architect",
       "displayName": "Think like an Architect",
       "description": "Six guided decision-making tools from the book of the same name — the 5-Step Decision Method, Decision Logs, weighted Pros and Cons Grids, the Impact vs Effort Matrix, RACI Matrices, and a setup skill to save any of them to a local file, Confluence, Jira, or Google Docs. Each tool checks your Decision Log register first and flags related past decisions before you proceed.",
       "source": "./",
-      "version": "1.3.0",
+      "version": "2.0.0",
       "author": {
         "name": "Carl Vescovi",
         "url": "https://cloudux.com.au"

@@ -5,26 +5,26 @@ disable-model-invocation: true
 
 # Setup
 
-You are configuring where this plugin's five artifact types get saved: **Decision** (from `/think-like-an-architect:decision`), **Decision Log** entries, **Pros and Cons Grids**, **Impact vs Effort Matrices**, and **RACI Matrices**. This is optional — every skill still works and prints its output to chat with no setup at all. This skill exists for people who want the output to land somewhere durable and shared automatically instead of being copy-pasted by hand every time.
+You are configuring where this plugin's five artifact types get saved: **Decision** (from `/architect:decision`), **Decision Log** entries, **Pros and Cons Grids**, **Impact vs Effort Matrices**, and **RACI Matrices**. This is optional — every skill still works and prints its output to chat with no setup at all. This skill exists for people who want the output to land somewhere durable and shared automatically instead of being copy-pasted by hand every time.
 
 **Decision Log is structurally different from the other four.** It isn't a single file or page — it's a **central register** (one place listing every decision in a table: ID, date, summary, review date, and a link) **plus one linked page per decision** (the full entry: context, alternatives, reasoning, participants). Set it up as its own dedicated step, separate from the other four.
 
 ## Config File
 
-All configuration lives in one JSON file. Its directory name varies depending on which marketplace the plugin was installed from (e.g. `think-like-an-architect-cloudux`, not just `think-like-an-architect`) — resolve it, don't hardcode a single guess:
+All configuration lives in one JSON file. Its directory name varies depending on which marketplace the plugin was installed from (e.g. `architect-cloudux`, not just `architect`) — resolve it, don't hardcode a single guess:
 
 ```bash
 if [ -n "$CLAUDE_PLUGIN_DATA" ]; then
   CONFIG_DIR="$CLAUDE_PLUGIN_DATA"
 else
-  EXISTING=$(ls -td $HOME/.claude/plugins/data/think-like-an-architect*/ 2>/dev/null | head -1)
-  CONFIG_DIR="${EXISTING:-$HOME/.claude/plugins/data/think-like-an-architect}"
+  EXISTING=$(ls -td $HOME/.claude/plugins/data/architect*/ 2>/dev/null | head -1)
+  CONFIG_DIR="${EXISTING:-$HOME/.claude/plugins/data/architect}"
 fi
 mkdir -p "$CONFIG_DIR"
 CONFIG_FILE="$CONFIG_DIR/config.json"
 ```
 
-This reuses whatever directory already exists rather than risking a second, inconsistent one — only falls back to creating the plain `think-like-an-architect` directory if nothing matching exists yet at all.
+This reuses whatever directory already exists rather than risking a second, inconsistent one — only falls back to creating the plain `architect` directory if nothing matching exists yet at all.
 
 If `$CONFIG_FILE` already exists, read it first and show the user their current setup before asking anything — let them skip artifact types they don't want to change rather than re-answering everything every time.
 
@@ -79,4 +79,4 @@ Write the full configuration to `$CONFIG_FILE` in this shape:
 
 For a local-file Decision Log destination, the shape is `{ "destination": "local-file", "register_path": "...", "pages_dir": "..." }`. For Google Doc, `{ "destination": "google-doc", "register_doc_id": "...", "pages_folder_id": "..." }`. For Jira, `{ "destination": "jira", "project_key": "..." }` — no register/pages fields needed since the project provides both.
 
-Confirm back to the user in plain language what's configured for each of the five, and mention they can run `/think-like-an-architect:setup` again anytime to change it — this isn't a one-way decision.
+Confirm back to the user in plain language what's configured for each of the five, and mention they can run `/architect:setup` again anytime to change it — this isn't a one-way decision.

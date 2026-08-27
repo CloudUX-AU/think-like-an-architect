@@ -13,7 +13,7 @@ Decision logs are for choices that would be difficult to change later, decisions
 
 ## How to Run This
 
-If the user has just come from `/think-like-an-architect:decision` and pastes in that output, use it directly — don't re-ask what's already there. Otherwise, ask for the decision conversationally, gathering:
+If the user has just come from `/architect:decision` and pastes in that output, use it directly — don't re-ask what's already there. Otherwise, ask for the decision conversationally, gathering:
 
 - **Decision ID** — help them pick one if they don't have a convention yet (e.g. `D-YYYY-NN`)
 - **Date**
@@ -47,7 +47,7 @@ Then remind the user, briefly: put this somewhere the whole team can find it —
 
 ## Saving the Output: Register + Linked Page
 
-This is the one skill in the plugin that maintains **two things, not one**: a central register (a table listing every decision) and a separate page per decision that the register links to. Resolve the config file correctly — its directory name varies depending on which marketplace it was installed from, so don't assume a single fixed path. If `$CLAUDE_PLUGIN_DATA` is set, use `$CLAUDE_PLUGIN_DATA/config.json`. Otherwise, run `ls -t $HOME/.claude/plugins/data/think-like-an-architect*/config.json 2>/dev/null | head -1` and use whatever that returns, if anything. Check it for a `decision_log` entry. If it's missing or `"destination": "chat"`, just print the entry and mention once (not every run) that `/think-like-an-architect:setup` would let this get filed automatically. Otherwise:
+This is the one skill in the plugin that maintains **two things, not one**: a central register (a table listing every decision) and a separate page per decision that the register links to. Resolve the config file correctly — its directory name varies depending on which marketplace it was installed from, so don't assume a single fixed path. If `$CLAUDE_PLUGIN_DATA` is set, use `$CLAUDE_PLUGIN_DATA/config.json`. Otherwise, run `ls -t $HOME/.claude/plugins/data/architect*/config.json 2>/dev/null | head -1` and use whatever that returns, if anything. Check it for a `decision_log` entry. If it's missing or `"destination": "chat"`, just print the entry and mention once (not every run) that `/architect:setup` would let this get filed automatically. Otherwise:
 
 **`local-file`** — `register_path` and `pages_dir` are both in the config.
 1. Create `pages_dir` if it doesn't exist. Write the full entry to `{pages_dir}/{Decision ID}.md`.
