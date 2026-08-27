@@ -1,6 +1,6 @@
 # Think like an Architect
 
-Guided decision-making tools for Claude Code, built from the book *Think like an Architect — A Compass for Salesforce Admins* by Carl Vescovi. Written for Salesforce Admins who are routinely asked to make architect-level decisions without architect training. This plugin puts the book's core toolkit directly into your terminal, working on your own real decisions instead of a hypothetical example.
+Guided decision-making tools for Claude Code, built from the book [*Think like an Architect — A Compass for Salesforce Admins*](https://www.amazon.com.au/Think-like-Architect-Compass-Salesforce/dp/0646719092) by Carl Vescovi. Written for Salesforce Admins who are routinely asked to make architect-level decisions without architect training. This plugin puts the book's core toolkit directly into your terminal, working on your own real decisions instead of a hypothetical example.
 
 ## Install
 
