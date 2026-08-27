@@ -20,6 +20,10 @@ Five guided decision-making tools for Claude Code, built from the book *Think li
 
 Run any command and answer the questions it asks — each one produces a real, usable document at the end, not just an explanation.
 
+## Cross-Checking Against Your Decision Log
+
+If you've got a Decision Log register configured (see below), the other five tools check it before proceeding — not just a keyword match, an actual read for anything related by topic. If you're building a RACI matrix and someone was Accountable on a closely related decision but isn't in this one's people list, it says so. If you're comparing options in a Pros and Cons Grid and one of them was already ruled out in a logged decision, it tells you before you re-litigate it. If a new Decision Log entry looks like it overlaps with one already on record, it asks whether this is genuinely new, an update, or a deliberate reversal — rather than quietly creating a second, possibly contradictory entry. No register configured, or nothing relevant found — it stays silent about the check; you won't get told "nothing to report" every time.
+
 ## Saving Output Automatically (Optional)
 
 By default, every command just prints its output to chat — copy-paste it wherever you like. Run `/think-like-an-architect:setup` if you'd rather it landed somewhere durable automatically:

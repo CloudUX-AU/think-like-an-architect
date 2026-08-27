@@ -11,6 +11,10 @@ You are guiding the user through a weighted Pros and Cons Grid, from *Think like
 
 This tool is for comparing several real options where multiple factors matter with different levels of importance, or where people disagree and a structured comparison would help more than opinions would. If the user only has one real option, this isn't the right tool — say so and suggest `/think-like-an-architect:decision` instead.
 
+## Check the Decision Log First
+
+Before starting, check whether a Decision Log register is configured and reachable (same config-resolution logic as in "Saving the Output" below). If so, skim it for anything related to the comparison about to happen — by topic, not exact wording. If something related turns up, say so plainly: name the Decision ID and a one-line summary, and note why it matters (a prior decision that already ruled out one of these options, or evaluated something similar). If nothing's configured, reachable, or relevant, don't mention the check at all.
+
 ## How to Run This
 
 Work through this as a conversation, not a form dump:

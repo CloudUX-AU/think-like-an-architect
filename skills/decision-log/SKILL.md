@@ -24,6 +24,10 @@ If the user has just come from `/think-like-an-architect:decision` and pastes in
 - **Participants** — who was involved
 - **Review Date** — when to check whether this still holds
 
+## Check the Register Before Finalizing
+
+If a register is already configured and reachable (see the destination logic below), read it before writing the new entry — by topic, not exact wording, not just a duplicate Decision ID check. If something already on the register looks like it covers the same ground, say so plainly: name the Decision ID and summary, and ask whether this is genuinely a new decision, an update to that one (in which case it probably belongs as a note on the existing entry, not a new one), or a deliberate reversal (worth saying so explicitly in the new entry's context, so nobody reads the two entries later and assumes it's an inconsistency). If nothing's configured, reachable, or related, don't mention the check at all.
+
 ## Output
 
 Produce the entry in this exact shape (this is the book's own format, chapter 3):

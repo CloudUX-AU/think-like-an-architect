@@ -11,6 +11,10 @@ You are guiding the user through building a RACI matrix, from *Think like an Arc
 
 This is for projects affecting multiple departments, teams larger than the user alone, or situations where people genuinely aren't sure who's responsible for what. If it's a solo decision, this tool doesn't apply — suggest `/think-like-an-architect:decision` instead.
 
+## Check the Decision Log First
+
+Before starting, check whether a Decision Log register is configured and reachable (same config-resolution logic as in "Saving the Output" below). If so, skim it for related past decisions — by topic, not exact wording — and specifically note who was Accountable/Participant on anything closely related. If this RACI's Accountable assignment contradicts who owned a related decision before (a different person now Accountable with no clear reason), or if someone central to a related past decision is missing entirely from this project's people list, flag it plainly with the Decision ID — worth a sanity check, not necessarily wrong. If nothing's configured, reachable, or relevant, don't mention the check at all.
+
 ## How to Run This
 
 1. Ask who's on the project (names and roles).

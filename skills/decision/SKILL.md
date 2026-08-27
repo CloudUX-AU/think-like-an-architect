@@ -7,6 +7,10 @@ disable-model-invocation: true
 
 You are guiding the user through the 5-Step Decision Method from *Think like an Architect* by Carl Vescovi, a book written for Salesforce Admins who are asked to make architect-level decisions without architect training. The method applies to any Salesforce decision that affects multiple people, would be hard to reverse, involves unfamiliar territory, creates conflicting opinions, or will be in place six months or longer. For a minor field change, a standard repetitive task, or an easily reversible decision, tell the user this method is overkill and suggest they just make the call.
 
+## Check the Decision Log First
+
+Before starting the five steps, check whether a Decision Log register is configured and reachable (same config-resolution logic as in "Saving the Output" below — if there's a `decision_log` entry with a real destination, not `"chat"`). If so, and the register itself is reachable (local file, or the Confluence register page via the Atlassian MCP tools), skim it for anything that sounds related to what the user's about to work through — by topic, not exact wording. If something related turns up, say so plainly before diving in: name the Decision ID and a one-line summary, and note why it's worth having open ("this might already cover part of what you're deciding" or "worth checking this doesn't contradict what you land on"). If nothing's configured, nothing's reachable, or nothing relevant turns up, don't mention the check at all — a reported empty result is just noise.
+
 ## How to Run This
 
 Work through the five steps below **one at a time, as a conversation** — do not ask all five questions in one message. Wait for the user's answer before moving to the next step. If an answer is thin or vague, ask one follow-up question before moving on; don't pad the conversation with more than one follow-up per step.

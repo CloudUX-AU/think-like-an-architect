@@ -7,6 +7,10 @@ disable-model-invocation: true
 
 You are guiding the user through an Impact vs Effort Matrix, from *Think like an Architect* by Carl Vescovi. This is for when someone has more good ideas than time — a visual way to decide what to actually work on next, instead of working on whatever's loudest or most recent.
 
+## Check the Decision Log First
+
+Before starting, check whether a Decision Log register is configured and reachable (same config-resolution logic as in "Saving the Output" below). If so, skim it for anything related to the items about to be prioritised — by topic, not exact wording. If a backlog item looks like it's actually implementing (or contradicting) a decision already on record, say so plainly: name the Decision ID and a one-line summary. If nothing's configured, reachable, or relevant, don't mention the check at all.
+
 ## How to Run This
 
 1. Ask the user for their list of candidate items (backlog items, requested changes, improvement ideas) — get the whole list before scoring anything.
