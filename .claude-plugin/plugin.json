@@ -1,7 +1,7 @@
 {
   "name": "think-like-an-architect",
   "description": "Six guided decision-making tools from Think like an Architect by Carl Vescovi — the 5-Step Decision Method, Decision Logs, weighted Pros and Cons Grids, the Impact vs Effort Matrix, RACI Matrices, and a setup skill to save any of them to a local file, Confluence, Jira, or Google Docs. Built for Salesforce Admins making architect-level decisions without architect training.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": {
     "name": "Carl Vescovi",
     "url": "https://cloudux.com.au"

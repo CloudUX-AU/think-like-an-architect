@@ -33,6 +33,12 @@ Produce the matrix as a markdown table, people across the top, decisions down th
 | [decision 2] | C | R | A |
 ```
 
+**Include the definitions in the output itself, not just in conversation** — this page often gets saved and read later by someone who wasn't in the room when it was built, so it needs to stand on its own. Put a short legend directly above or below the table:
+
+```
+**R**esponsible — does the work. **A**ccountable — final authority, owns the outcome (exactly one per decision). **C**onsulted — input sought before the decision is made. **I**nformed — told the outcome, doesn't participate in making it.
+```
+
 After the table, call out anything worth flagging: a decision with no A, a person consulted on nearly everything, or a decision where the same person is both R and A (fine per the book, since Accountable can also do the work — flag it only if it seems to be hiding a missing second reviewer).
 
 Remind the user: get buy-in on the chart before the project starts — a RACI people haven't agreed to just gets ignored.
