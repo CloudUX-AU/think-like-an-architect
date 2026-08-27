@@ -37,7 +37,7 @@ By default, every command just prints its output to chat — copy-paste it where
 
 ## About the Book
 
-*Think like an Architect* is written by Carl Vescovi, a Salesforce Architect with over twenty years across administration, development, and architecture. The book argues that Trailhead and certifications teach features, not structured thinking. This plugin is the same method, made interactive.
+[*Think like an Architect*](https://www.amazon.com.au/Think-like-Architect-Compass-Salesforce/dp/0646719092) is written by Carl Vescovi, a Salesforce Architect with over twenty years across administration, development, and architecture. The book argues that Trailhead and certifications teach features, not structured thinking. This plugin is the same method, made interactive.
 
 Want a second pair of eyes on a real decision, or an outside architect's view of your Salesforce org? [cloudux.com.au](https://cloudux.com.au)
 
