@@ -43,7 +43,7 @@ Then remind the user, briefly: put this somewhere the whole team can find it —
 
 ## Saving the Output: Register + Linked Page
 
-This is the one skill in the plugin that maintains **two things, not one**: a central register (a table listing every decision) and a separate page per decision that the register links to. Check `${CLAUDE_PLUGIN_DATA:-$HOME/.claude/plugins/data/think-like-an-architect}/config.json` for a `decision_log` entry. If it's missing or `"destination": "chat"`, just print the entry and mention once (not every run) that `/think-like-an-architect:setup` would let this get filed automatically. Otherwise:
+This is the one skill in the plugin that maintains **two things, not one**: a central register (a table listing every decision) and a separate page per decision that the register links to. Resolve the config file correctly — its directory name varies depending on which marketplace it was installed from, so don't assume a single fixed path. If `$CLAUDE_PLUGIN_DATA` is set, use `$CLAUDE_PLUGIN_DATA/config.json`. Otherwise, run `ls -t $HOME/.claude/plugins/data/think-like-an-architect*/config.json 2>/dev/null | head -1` and use whatever that returns, if anything. Check it for a `decision_log` entry. If it's missing or `"destination": "chat"`, just print the entry and mention once (not every run) that `/think-like-an-architect:setup` would let this get filed automatically. Otherwise:
 
 **`local-file`** — `register_path` and `pages_dir` are both in the config.
 1. Create `pages_dir` if it doesn't exist. Write the full entry to `{pages_dir}/{Decision ID}.md`.

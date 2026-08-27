@@ -35,7 +35,7 @@ Then ask: "Want this saved as a Decision Log entry too, for when someone asks ab
 
 ## Saving the Output
 
-Check for `${CLAUDE_PLUGIN_DATA:-$HOME/.claude/plugins/data/think-like-an-architect}/config.json`. If it exists and has a `decision` entry that isn't `"destination": "chat"`, save the output there in addition to printing it: append to the local file, or create/append a Confluence page via the Atlassian MCP tools, using the space key / parent page from the config. If there's no config file, or the entry is `"chat"`, just print the output and mention once that running `/think-like-an-architect:setup` would let this get saved somewhere automatically next time — don't repeat that reminder on every single run once they've heard it.
+Resolve the config file correctly — its directory name varies depending on which marketplace it was installed from, so don't assume a single fixed path. If `$CLAUDE_PLUGIN_DATA` is set, use `$CLAUDE_PLUGIN_DATA/config.json`. Otherwise, run `ls -t $HOME/.claude/plugins/data/think-like-an-architect*/config.json 2>/dev/null | head -1` and use whatever that returns, if anything. If it exists and has a `decision` entry that isn't `"destination": "chat"`, save the output there in addition to printing it: append to the local file, or create/append a Confluence page via the Atlassian MCP tools, using the space key / parent page from the config. If there's no config file, or the entry is `"chat"`, just print the output and mention once that running `/think-like-an-architect:setup` would let this get saved somewhere automatically next time — don't repeat that reminder on every single run once they've heard it.
 
 End with:
 

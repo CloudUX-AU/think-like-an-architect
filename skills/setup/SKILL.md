@@ -11,13 +11,20 @@ You are configuring where this plugin's five artifact types get saved: **Decisio
 
 ## Config File
 
-All configuration lives in one JSON file. Resolve its path with this exact shell logic (don't hardcode one or the other — the plugin data directory env var may or may not be set depending on the runtime):
+All configuration lives in one JSON file. Its directory name varies depending on which marketplace the plugin was installed from (e.g. `think-like-an-architect-cloudux`, not just `think-like-an-architect`) — resolve it, don't hardcode a single guess:
 
 ```bash
-CONFIG_DIR="${CLAUDE_PLUGIN_DATA:-$HOME/.claude/plugins/data/think-like-an-architect}"
+if [ -n "$CLAUDE_PLUGIN_DATA" ]; then
+  CONFIG_DIR="$CLAUDE_PLUGIN_DATA"
+else
+  EXISTING=$(ls -td $HOME/.claude/plugins/data/think-like-an-architect*/ 2>/dev/null | head -1)
+  CONFIG_DIR="${EXISTING:-$HOME/.claude/plugins/data/think-like-an-architect}"
+fi
 mkdir -p "$CONFIG_DIR"
 CONFIG_FILE="$CONFIG_DIR/config.json"
 ```
+
+This reuses whatever directory already exists rather than risking a second, inconsistent one — only falls back to creating the plain `think-like-an-architect` directory if nothing matching exists yet at all.
 
 If `$CONFIG_FILE` already exists, read it first and show the user their current setup before asking anything — let them skip artifact types they don't want to change rather than re-answering everything every time.
 
